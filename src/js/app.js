@@ -143,26 +143,7 @@ App = {
         App.render();
       });
     });
-  },
-
-  ajoutcandidat: function() {
-    var prenom = $('#prenom').val();
-    var nom = $('#nom').val();
-    var parti = $('#parti').val();
-    console.log(prenom);
-    console.log(nom);
-    console.log(parti);
-    App.contracts.Election.deployed().then(function(instance) {
-      
-      return instance.addCandidate(parti,prenom,nom);
-    }).then(function(result) {
-      // Wait for votes to update
-      $("#content").hide();
-      $("#loader").show();
-    }).catch(function(err) {
-      console.error(err);
-    });
-  },
+  }
   
 
 };
